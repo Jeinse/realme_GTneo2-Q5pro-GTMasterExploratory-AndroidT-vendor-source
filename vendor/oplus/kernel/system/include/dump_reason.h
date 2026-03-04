@@ -11,7 +11,7 @@
 #define SMEM_DUMP_INFO 129
 #define DUMP_REASON_SIZE 256
 
-struct dump_info{
+struct oplus_dump_info {
     char    dump_reason[DUMP_REASON_SIZE];  //dump reason
 };
 
