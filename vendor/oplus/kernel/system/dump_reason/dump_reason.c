@@ -17,7 +17,7 @@
 static char caller_function_name[KSYM_SYMBOL_LEN];
 static struct oplus_dump_info *dp_info;
 
-char *parse_function_builtin_return_address(unsigned long function_address)
+__weak char *parse_function_builtin_return_address(unsigned long function_address)
 {
 	char *cur = caller_function_name;
 
@@ -30,7 +30,7 @@ char *parse_function_builtin_return_address(unsigned long function_address)
 }
 EXPORT_SYMBOL(parse_function_builtin_return_address);
 
-void save_dump_reason_to_smem(char *info, char *function_name)
+__weak void save_dump_reason_to_smem(char *info, char *function_name)
 {
 	int strlinfo = 0, strlfun = 0;
 	size_t size;
