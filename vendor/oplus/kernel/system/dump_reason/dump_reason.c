@@ -15,7 +15,7 @@
 #include <soc/oplus/system/device_info.h>
 
 static char caller_function_name[KSYM_SYMBOL_LEN];
-static struct oplus_dump_info *dp_info;
+static struct dump_info *dp_info;
 
 char *parse_function_builtin_return_address(unsigned long function_address)
 {
@@ -77,7 +77,7 @@ void dump_reason_init_smem(void)
     int ret;
 
     ret = qcom_smem_alloc(QCOM_SMEM_HOST_ANY,SMEM_DUMP_INFO,
-                                  sizeof(struct oplus_dump_info));
+                                  sizeof(struct dump_info));
 
     if (ret < 0 && ret != -EEXIST) {
           pr_err("%s:unable to allocate dp_info \n", __func__);
